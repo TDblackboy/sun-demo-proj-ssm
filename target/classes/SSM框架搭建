@@ -1,0 +1,76 @@
+【SSM认识】
+
+	Spring作为一个轻量级的框架
+	
+	SpringMVC是Spring实现的一个Web层
+	
+	Mybatis是 一个持久层的框架
+
+【Maven项目配置文件设置：】
+
+1 pom.xml
+	
+	配置依赖jar
+
+2 SSM 配置文件
+
+	  applicationContext.xml
+	  
+	  db.properties
+	  
+	  log4j.properties
+	  
+	  mybatis-config.xml
+	  
+	  springmvc-config.xml
+  
+3 web.xml :整个Web项目的总控
+
+	  -> spring-mvc.xml;
+	
+	
+【Eclipse构建WEB项目目录结构：】
+
+@ JavaResources：
+	 *src/main/java   -核心
+	 	-> .java
+	 *src/main/resources 
+	 	-> （SSM）config
+@ webapp
+	 index.jsp
+	 * WEB-INF
+	 	  views: .jsp
+	 	  
+	 	  
+	 	  
+【配置文件的关系】
+
+web.xml : web项目（整个项目）的配置
+		+ applicationContext.xml;
+		+ spring-mvc.xml;
+		
+
+applicationContext.xml : spring的配置文件
+		+ spring-mybatis.xml
+		+ db.properties 
+			方案一：把mybatis的sqlsession托管给spring；在applicationContext.xml中配置数据库属性；
+						+ mapper.xml
+			方案二：在mybatis.xml中配置数据库属性；
+					spring-mybatis.xml:
+							+ db.properties;
+							+ **mapper.xml;
+
+
+持久层：
+	mybatis.xml  - db.properties - 数据库配置
+				 - **mapper.xml - 数据库操作实现 {  **mapper.java(数据库操作接口) + pojo(操作对象-实体)  }
+	
+视图层： 
+	spring-mvc - **controller.java(前端控制)    
+	 	
+	 	  
+业务层：
+	service - 自定义；	 	
+	
+	
+  

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">	
+
+<!-- 命名空间，可以对sql进行分类的一个管理 -->
+<mapper namespace="rain.mapping.AccountMapper">
+
+	<!-- 查询所有account -->
+	<!-- 返回resultType：List<Object> -->
+	<select id="findAllAccount" resultType="rain.pojo.Account">
+		select * from user;
+	</select>
+
+
+</mapper>

@@ -1,0 +1,72 @@
+【 SSM 分层 】
+
+	Bean实体类 - 操作对象 - 可封装结构化数据
+	
+	Dao - 直接面向Bean数据库操作对象？
+	
+	Service - 面向服务的操作对象？
+		interface； 
+		implement； 
+		
+	controller - 链接前端请求和后台服务的通道：捕获前端请求+调用后台服务
+
+
+
+【 SSM 前后端数据交互：数据流转 】
+
+容器：HttpServletRequest-传值
+
+
+（1）***.jsp：   ------------ view层
+	传递请求：
+		方式？（多种-待测试）
+		ajsx？？（多种-待测试）
+	接受响应：方式？（多种-待测试）
+		
+	
+	数据展示：
+		（1） JSTL标签库-jsp标签
+	
+	
+	
+	
+-----传参----->  1 怎么跳到controller？
+					·在web-xml 配置spring-mvc.xml;
+					·在spring-mvc.xml中配置 controller路径；
+				 2  可以写几个controller？
+					·只要controller对同一个参数的接受不冲突即一个请求对应一个接受方法，就可任意写多个controller	；
+
+
+
+（2）controller：  ------------ 控制层
+	接受请求：方式？（多种-待测试）
+		1.@RequestMapping(value = "test", method = RequestMethod.GET)；（已测） 
+		
+		
+	返回响应：
+		1 绑定service单元，交给相应的服务单元,处理请求；
+			
+		2 方法的返回值通常会有三种：ModelAndView、String、Void   方式？
+			String：后台页面跳转通过返回String类型值实现
+			void：使用ajax,则使用void返回值
+			ModelAndView：几乎不用
+
+
+（3）service ：------------ 服务层：业务逻辑处理单元
+	Note：
+		（1）作用：由controller绑定依赖，供controller调用；
+		（2）组成：interface & implement
+		
+		
+（4）mapper(dao) ：----------------- 数据操作层
+		Note：
+			（1）由service绑定依赖，供service调用；
+			（2）sql语句在xml文件中 - mapping文件夹中
+			
+			
+（5）po：----------------- 实体层
+		Note：自定义Object；
+			
+ 
+
+
