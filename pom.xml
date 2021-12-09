@@ -26,7 +26,7 @@
 		<!--<taglibVersion>1.1.2</taglibVersion> -->
 		<!--<servletVersion>3.0-alpha-1</servletVersion> -->
 		<!-- jackson版本号 -->
-		<jackson.verson>2.8.9</jackson.verson>
+		<jackson.verson>2.9.10.8</jackson.verson>
 	</properties>
 
 
